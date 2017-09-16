@@ -16,7 +16,6 @@ public class ComodoController implements BaseController<Comodo> {
 
     private static final String COMODO = "comodo";
     private ComodoService service = new ComodoService();
-
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView save(@ModelAttribute Comodo pojo, RedirectAttributes redAttr) {
         ModelAndView mv = new ModelAndView("redirect:/" + COMODO);
