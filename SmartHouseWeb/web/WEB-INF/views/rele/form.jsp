@@ -1,10 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!--Validação relé-->
 <script src="<c:url value="/resources/validacaoJS/validacaoRele.js"/>" type="text/javascript"></script>
-
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Relé
@@ -15,25 +12,27 @@
             <li class="active">Relé</li>
         </ol>
     </section>
-    <!-- Main content -->
+    <!-- Principal content -->
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box box-primary">
                     <div class="box-header">
                         <h3 class="box-title">Novo Relé</h3>
-                    </div><!-- /.box-header -->
+                    </div>
                     <c:url value="/rele" var="url" />
-                    <!-- form start -->                    
+                    <!-- Formulário de cadastro de Relé -->                    
                     <form role="form" method="POST" action="${url}" onsubmit="return validateRegisterRele()">
                         <input type="hidden" id="id" placeholder="id" name="id" value="${pojo.id}">
                         <div class="box-body">
+                            <!--Campo input nome-->
                             <div id="input-nome" class="form-group">
                                 <label for="nome">Nome</label>
                                 <input type="text" class="form-control" id="nome" onkeypress="ocultaErro(this.name)" name="nome" value="${pojo.nome}">
                                 <span class="form-control-feedback" style="display: none"></span>
                                 <div id="nomeError" class="fieldError" style="display: none">Campo nome obrigatório!</div>
                             </div>
+                                <!--Campo input porta-->
                             <div id="input-porta" class="form-group">
                                 <label for="porta">Porta</label>
                                 <input type="text" class="form-control" id="porta" onkeypress="ocultaErro(this.name)" name="porta" value="${pojo.porta}">
@@ -62,16 +61,4 @@
         </div>
     </section>
 </div>
-<script type="text/javascript">
-    $(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
-            "bPaginate": true,
-            "bLengthChange": false,
-            "bFilter": false,
-            "bSort": true,
-            "bInfo": true,
-            "bAutoWidth": false
-        });
-    });
-</script>
+

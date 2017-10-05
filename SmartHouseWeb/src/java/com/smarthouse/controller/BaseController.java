@@ -16,7 +16,7 @@ public interface BaseController<E> {
     public ModelAndView readByCriteria();
 
     @RequestMapping(value = "{id}/excluir",method = RequestMethod.GET)
-    public ModelAndView delete(@PathVariable Long id);
+    public ModelAndView delete(@PathVariable Long id, RedirectAttributes redAttr);
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
     public ModelAndView get(Long id);

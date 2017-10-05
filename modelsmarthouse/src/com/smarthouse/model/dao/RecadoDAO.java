@@ -19,7 +19,7 @@ public class RecadoDAO implements BaseDAO<Recado> {
         PreparedStatement ps = conn.prepareStatement(query);
         int i = 0;
         ps.setString(++i, entity.getRecado());
-        ps.setTimestamp(++i, entity.getDataHoraRecado());
+        ps.setTimestamp(++i, entity.getData_hora_recado());
         ps.setLong(++i, entity.getUsuario().getId());
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
@@ -73,7 +73,7 @@ public class RecadoDAO implements BaseDAO<Recado> {
             Recado pojo = new Recado();
             pojo.setId(rs.getLong("rec_id"));
             pojo.setRecado(rs.getString("rec_recado"));
-            pojo.setDataHoraRecado(rs.getTimestamp("rec_data_hora_recado"));
+            pojo.setData_hora_recado(rs.getTimestamp("rec_data_hora_recado"));
             Usuario usuario = new Usuario();
             usuario.setId(rs.getLong("usu_id"));
             usuario.setNome(rs.getString("usu_nome"));

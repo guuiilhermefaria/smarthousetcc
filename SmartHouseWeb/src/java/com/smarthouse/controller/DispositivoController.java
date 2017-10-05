@@ -26,8 +26,10 @@ public class DispositivoController implements BaseController<Dispositivo> {
         ModelAndView mv = new ModelAndView("redirect:/" + DISPOSITIVO);
         if (pojo.getId() == null) {
             service.create(pojo);
+            redAttr.addFlashAttribute("sucesso", "Dispositivo criado com sucesso");
         } else {
             service.update(pojo);
+            redAttr.addFlashAttribute("sucesso", "Dispositivo atualizado com sucesso");
         }
         return mv;
     }
@@ -40,16 +42,17 @@ public class DispositivoController implements BaseController<Dispositivo> {
     }
 
     @RequestMapping(value = "{id}/excluir", method = RequestMethod.GET)
-    public ModelAndView delete(@PathVariable Long id) {
+    public ModelAndView delete(@PathVariable Long id, RedirectAttributes redAttr) {
         ModelAndView mv = new ModelAndView("redirect:/" + DISPOSITIVO);
         service.delete(id);
+        redAttr.addFlashAttribute("deletado", "Dispositivo deletado com sucesso");
         return mv;
     }
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
     public ModelAndView get(Long id) {
         ModelAndView mv = new ModelAndView(DISPOSITIVO + "/form");
-        
+
         if (id != null) {
             mv.addObject("pojo", service.readById(id));
         }

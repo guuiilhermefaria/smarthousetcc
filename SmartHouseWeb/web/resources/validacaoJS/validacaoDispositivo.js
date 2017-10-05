@@ -11,7 +11,6 @@ function validateRegisterDispositivo() {
     return retorno;
 }
 ;
-
 function ocultaErro(name) {
     $('#input-nome').removeClass('has-error has-feedback');
     $('.glyphicon glyphicon-remove').removeClass('display', 'none');
@@ -20,13 +19,31 @@ function ocultaErro(name) {
 }
 ;
 $(function () {
-    var url = window.location.href;
-    if (url.indexOf('sucesso') !== -1) {
+    var msg = $('#sucesso').val();
+    if (msg != "") {
         $.toast({
-            text: "<h5>Salvo com sucesso!</h5>",
+            text: "<h5>" + msg + "!</h5>",
             bgColor: 'green',
-            position: 'top-right',
-            hideAfter: 2000
+            position: {top: 115, right : 21},
+            hideAfter: 2000,
+            icon: 'success',
+            showHideTransition: 'plain', 
+            stack: false
+        });
+    }
+}
+);
+$(function () {
+    var msg = $('#deletado').val();
+    if (msg != "") {
+        $.toast({
+            text: "<h5>" + msg + "!</h5>",
+            bgColor: 'red',
+            position: {top: 115, right : 21},
+            hideAfter: 2000,
+            icon: 'success',
+            showHideTransition: 'plain', 
+            stack: false
         });
     }
 }

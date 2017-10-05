@@ -116,8 +116,9 @@ public class DispositivoDAO implements BaseDAO<Dispositivo> {
     public List<Dispositivo> readByCriteria(Connection conn, Map<Long, Object> criteria) throws Exception {
         List<Dispositivo> list = new ArrayList<>();
         Dispositivo pojo = null;
-        String query = "SELECT dis_id, dis_nome, com_id, com_nome FROM dispositivo ";
+        String query = "SELECT dis_id, dis_nome, t_lig_id, t_lig_nome, com_id, com_nome FROM dispositivo ";
         query += "LEFT JOIN comodo ON dis_comodo_fk = com_id ";
+        query += "LEFT JOIN tipo_de_ligacao ON dis_tipo_de_ligacao_fk = t_lig_id ORDER BY dis_nome";
         Statement s = conn.createStatement();
         ResultSet rs = s.executeQuery(query);
         while (rs.next()) {
@@ -127,7 +128,11 @@ public class DispositivoDAO implements BaseDAO<Dispositivo> {
             Comodo comodo = new Comodo();
             comodo.setId(rs.getLong("com_id"));
             comodo.setNome(rs.getString("com_nome"));
+            TipoDeLigacao t_lig = new TipoDeLigacao();
+            t_lig.setId(rs.getLong("t_lig_id"));
+            t_lig.setNome(rs.getString("t_lig_nome"));
             pojo.setComodo(comodo);
+            pojo.setTipo_de_ligacao(t_lig);
             list.add(pojo);
         }
         rs.close();

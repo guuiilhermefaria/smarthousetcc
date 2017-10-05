@@ -6,7 +6,6 @@
 <script src="<c:url value="/resources/toast/jquery.toast.min.js"/>" type="text/javascript"></script>
 
 <div class="content-wrapper" >
-    <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Cômodos
@@ -17,17 +16,19 @@
             <li class="active">Lista de Cômodos</li>
         </ol>
     </section>
-    <!-- Main content -->
+    <!-- Principal content -->
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Lista de Cômodos</h3>
-                    </div><!-- /.box-header -->
+                    </div>
                     <input type="hidden" value="${sucesso}" id="sucesso">
+                    <input type="hidden" value="${deletado}" id="deletado">
                     <div class="box-body">
-                        <table id="example2" class="table table-bordered table-hover">
+                        <!--Tabela de listagem de Cômodos-->
+                        <table id="tabelaComodo" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th width="85%">Nome</th>
@@ -51,23 +52,9 @@
                                 </c:if>                                
                             </tbody>
                         </table>
-                    </div><!-- /.box-body -->
-                </div><!-- /.box -->
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </section><!-- /.content -->
-</div><!-- /.content-wrapper -->
-<script type="text/javascript">
-    /*$(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
-            "bPaginate": true,
-            "bLengthChange": false,
-            "bFilter": false,
-            "bSort": true,
-            "bInfo": true,
-            "bAutoWidth": false
-        });
-    });*/
-    
-</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

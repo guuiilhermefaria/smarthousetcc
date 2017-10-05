@@ -105,8 +105,7 @@ public class ReleDAO implements BaseDAO<Rele> {
     public List<Rele> readByCriteria(Connection conn, Map<Long, Object> criteria) throws Exception {
         List<Rele> list = new ArrayList<>();
         String query = "SELECT rel_id, rel_nome, rel_porta, dis_id, dis_nome FROM rele ";
-        query += "LEFT JOIN dispositivo ON dis_id = rel_dispositivo_fk";
-        query += " ORDER BY rel_nome";
+        query += "LEFT JOIN dispositivo ON dis_id = rel_dispositivo_fk ORDER BY rel_nome";
         Statement s = conn.createStatement();
         ResultSet rs = s.executeQuery(query);
         while (rs.next()) {

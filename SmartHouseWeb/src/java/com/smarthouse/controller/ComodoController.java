@@ -16,15 +16,16 @@ public class ComodoController implements BaseController<Comodo> {
 
     private static final String COMODO = "comodo";
     private ComodoService service = new ComodoService();
+
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView save(@ModelAttribute Comodo pojo, RedirectAttributes redAttr) {
         ModelAndView mv = new ModelAndView("redirect:/" + COMODO);
         if (pojo.getId() == null) {
             service.create(pojo);
-            redAttr.addFlashAttribute("sucesso", "Cômodo criado com sucesso!");
+            redAttr.addFlashAttribute("sucesso", "Cômodo criado com sucesso");
         } else {
             service.update(pojo);
-            redAttr.addFlashAttribute("sucesso", "Cômodo atualizado com sucesso!");
+            redAttr.addFlashAttribute("sucesso", "Cômodo atualizado com sucesso");
         }
         return mv;
     }
@@ -46,9 +47,10 @@ public class ComodoController implements BaseController<Comodo> {
     }
 
     @RequestMapping(value = "{id}/excluir", method = RequestMethod.GET)
-    public ModelAndView delete(@PathVariable Long id) {
+    public ModelAndView delete(@PathVariable Long id, RedirectAttributes redAttr) {
         ModelAndView mv = new ModelAndView("redirect:/" + COMODO);
         service.delete(id);
+        redAttr.addFlashAttribute("deletado", "Cômodo deletado com sucesso");
         return mv;
     }
 

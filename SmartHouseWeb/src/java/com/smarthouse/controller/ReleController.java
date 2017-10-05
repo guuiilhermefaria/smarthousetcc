@@ -21,8 +21,10 @@ public class ReleController implements BaseController<Rele>{
         ModelAndView mv = new ModelAndView("redirect:/" + RELE);
         if (pojo.getId() == null) {
             service.create(pojo);
+            redAttr.addFlashAttribute("sucesso", "Relé criado com sucesso");
         } else {
             service.update(pojo);
+            redAttr.addFlashAttribute("sucesso", "Relé atualizado com sucesso");
         }
         return mv;
     }
@@ -33,9 +35,10 @@ public class ReleController implements BaseController<Rele>{
         return mv;
     }
 
-    public ModelAndView delete(@PathVariable Long id) {
+    public ModelAndView delete(@PathVariable Long id, RedirectAttributes redAttr) {
         ModelAndView mv = new ModelAndView("redirect:/" + RELE);
         service.delete(id);
+        redAttr.addFlashAttribute("deletado", "Relé deletado com sucesso");
         return mv;
     }
 

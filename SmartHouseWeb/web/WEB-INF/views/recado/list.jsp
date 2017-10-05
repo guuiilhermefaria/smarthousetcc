@@ -3,7 +3,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="content-wrapper" >
-    <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Recados
@@ -20,7 +19,7 @@
                 <div class="box box-primary">
                     <div class="box-header">
                         <h3 class="box-title">Lista de Recados</h3>
-                    </div><!-- /.box-header -->
+                    </div>
                     <div class="box-body">
                         <c:if test="${not empty list}">
                             <div class="row">              
@@ -39,21 +38,21 @@
                                                     <p>
                                                     ${recado.recado}                                                    
                                                 </p>
-                                            </div><!-- /.box-body -->
+                                            </div>
                                             <div class="box-footer ">
-                                                <code>Enviado em <fmt:formatDate pattern="dd/MM/yyyy" value="${recado.dataHoraRecado}"/> às <fmt:formatDate pattern="HH:mm" value="${recado.dataHoraRecado}" type="time"/></code>
-                                            </div><!-- /.box-footer-->
-                                        </div><!-- /.box -->
-                                    </div><!-- /.col -->
+                                                <code>Enviado em <fmt:formatDate pattern="dd/MM/yyyy" value="${recado.data_hora_recado}"/> às <fmt:formatDate pattern="HH:mm" value="${recado.data_hora_recado}" type="time"/></code>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </c:forEach>
-                            </div><!-- /.row -->
+                            </div>
                         </c:if>
-                    </div><!-- /.box-body -->
-                </div><!-- /.box -->
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </section><!-- /.content -->
-</div><!-- /.content-wrapper -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 <script type="text/javascript">
     $(function () {
         $("#example1").dataTable();

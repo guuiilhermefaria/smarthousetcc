@@ -63,7 +63,7 @@ public class ComodoDAO implements BaseDAO<Comodo> {
     public List<Comodo> readByCriteria(Connection conn, Map<Long, Object> criteria) throws Exception {
         List<Comodo> list = new ArrayList<>();
         Comodo pojo = null;
-        String query = "SELECT com_id, com_nome FROM comodo";
+        String query = "SELECT com_id, com_nome FROM comodo ORDER BY com_nome";
         Statement s = conn.createStatement();
         ResultSet rs = s.executeQuery(query);
         while (rs.next()) {

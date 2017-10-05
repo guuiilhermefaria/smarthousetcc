@@ -1,10 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!--Validação dispositivo-->
 <script src="<c:url value="/resources/validacaoJS/validacaoDispositivo.js"/>" type="text/javascript"></script>
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Dipositivos
@@ -15,19 +13,20 @@
             <li class="active">Dipositivo</li>
         </ol>
     </section>
-    <!-- Main content -->
+    <!-- Principal content -->
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box box-primary">
                     <div class="box-header">
                         <h3 class="box-title">Novo Dipositivo</h3>
-                    </div><!-- /.box-header -->
+                    </div>
                     <c:url value="/dispositivo" var="url" />
-                    <!-- form start -->                    
+                    <!--Formulário de cadastro Dispositivo-->
                     <form role="form" method="POST" action="${url}" onclick="return validateRegisterDispositivo()">
                         <input type="hidden" id="id" placeholder="id" name="id" value="${pojo.id}">
                         <div class="box-body">
+                            <!--Campo input nome-->
                             <div id="input-nome" class="form-group">
                                 <label for="nome">Nome</label>
                                 <input type="text" class="form-control" id="nome" onkeypress="ocultaErro(this.name)" name="nome" value="${pojo.nome}">
@@ -58,26 +57,14 @@
                                     </c:if>
                                 </select>
                             </div>
-                        </div><!-- /.box-body -->
+                        </div>
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
                     </form>
-                </div><!-- /.box -->
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </section><!-- /.content -->
-</div><!-- /.content-wrapper -->
-<script type="text/javascript">
-    $(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
-            "bPaginate": true,
-            "bLengthChange": false,
-            "bFilter": false,
-            "bSort": true,
-            "bInfo": true,
-            "bAutoWidth": false
-        });
-    });
-</script>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

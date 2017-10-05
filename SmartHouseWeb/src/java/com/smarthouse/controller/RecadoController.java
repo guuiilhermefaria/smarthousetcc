@@ -33,7 +33,7 @@ public class RecadoController implements BaseController<Recado>{
         if (pojo.getId() == null) {
             Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
             pojo.setUsuario(usuario);
-            pojo.setDataHoraRecado(new Timestamp(System.currentTimeMillis()));
+            pojo.setData_hora_recado(new Timestamp(System.currentTimeMillis()));
             service.create(pojo);
         } else {
             service.update(pojo);
@@ -47,7 +47,7 @@ public class RecadoController implements BaseController<Recado>{
         return mv;
     }
 
-    public ModelAndView delete(@PathVariable Long id) {
+    public ModelAndView delete(@PathVariable Long id, RedirectAttributes redAttr) {
         ModelAndView mv = new ModelAndView("redirect:/" + RECADO);
         service.delete(id);
         return mv;

@@ -17,22 +17,13 @@ function ocultaErro(name) {
     $('#' + name + 'Error').css('display', 'none');
     $('.form-control-feedback').css('display', 'none');
 }
-//function mostraSucesso(name) {
-//    if ($('#nome').val !== "") {
-//        $('.form-control-feedback').addClass('glyphicon glyphicon-ok');
-//        $('.form-control-feedback').css('display', 'block');
-//        $('#input-nome').addClass('has-success has-feedback');
-//    }
-//}
-
+;
 $(function () {
-    var url = window.location.href;
     var msg = $('#sucesso').val();
-    if (msg !== -1) {
+    if (msg != "") {
         $.toast({
             text: "<h5>" + msg + "!</h5>",
             bgColor: 'green',
-//            position: 'mid-center',
             position: {top: 115, right : 21},
             hideAfter: 2000,
             icon: 'success',
@@ -42,19 +33,18 @@ $(function () {
     }
 }
 );
-//$(function () {
-//    var url = window.location.href;
-//    if (url.indexOf('sucesso') !== -1) {
-//        $.toast({
-//            text: "<h5>Cômodo salvo com sucesso!</h5>",
-//            bgColor: 'green',
-////            position: 'mid-center',
-//            position: {top: 115, right : 21},
-//            hideAfter: 2000,
-//            icon: 'success',
-//            showHideTransition: 'plain', 
-//            stack: false
-//        });
-//    }
-//}
-//);
+$(function () {
+    var msg = $('#deletado').val();
+    if (msg != "") {
+        $.toast({
+            text: "<h5>" + msg + "!</h5>",
+            bgColor: 'red',
+            position: {top: 115, right : 21},
+            hideAfter: 2000,
+            icon: 'success',
+            showHideTransition: 'plain', 
+            stack: false
+        });
+    }
+}
+);

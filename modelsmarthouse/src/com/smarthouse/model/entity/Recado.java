@@ -8,7 +8,7 @@ public class Recado extends BaseEntity {
 
     private String recado;
     private Usuario usuario;
-    private Timestamp dataHoraRecado;
+    private Timestamp data_hora_recado;
 
     public String getRecado() {
         return recado;
@@ -26,12 +26,12 @@ public class Recado extends BaseEntity {
         this.usuario = usuario;
     }
 
-    public Timestamp getDataHoraRecado() {
-        return dataHoraRecado;
+    public Timestamp getData_hora_recado() {
+        return data_hora_recado;
     }
 
-    public void setDataHoraRecado(Timestamp dataHoraRecado) {
-        this.dataHoraRecado = dataHoraRecado;
-    } 
+    public void setData_hora_recado(Timestamp data_hora_recado) {
+        this.data_hora_recado = data_hora_recado;
+    }
 
 }

@@ -8,4 +8,4 @@
             <small>${usuarioLogado.nome}</small>
         </h1>        
     </section>
-</div><!-- /.content-wrapper -->
+</div>

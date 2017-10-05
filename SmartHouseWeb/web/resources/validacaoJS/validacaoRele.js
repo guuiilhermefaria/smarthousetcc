@@ -26,3 +26,34 @@ function ocultaErro(name) {
     $('#' + name + 'Error').css('display', 'none');
     $('.form-control-feedback').css('display', 'none');
 }
+
+$(function () {
+    var msg = $('#sucesso').val();
+    if (msg != "") {
+        $.toast({
+            text: "<h5>" + msg + "!</h5>",
+            bgColor: 'green',
+            position: {top: 115, right : 21},
+            hideAfter: 2000,
+            icon: 'success',
+            showHideTransition: 'plain', 
+            stack: false
+        });
+    }
+}
+);
+$(function () {
+    var msg = $('#deletado').val();
+    if (msg != "") {
+        $.toast({
+            text: "<h5>" + msg + "!</h5>",
+            bgColor: 'red',
+            position: {top: 115, right : 21},
+            hideAfter: 2000,
+            icon: 'success',
+            showHideTransition: 'plain', 
+            stack: false
+        });
+    }
+}
+);

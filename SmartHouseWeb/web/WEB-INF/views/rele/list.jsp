@@ -1,7 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!--Validação relés-->
+<script src="<c:url value="/resources/validacaoJS/validacaoRele.js"/>" type="text/javascript"></script>
+<link rel="stylesheet" href="<c:url value="/resources/toast/jquery.toast.min.css"/>">
+<script src="<c:url value="/resources/toast/jquery.toast.min.js"/>" type="text/javascript"></script>
+
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Relés
@@ -12,14 +16,16 @@
             <li class="active">Lista de Relés</li>
         </ol>
     </section>
-    <!-- Main content -->
+    <!-- Principal content -->
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Lista de Relés</h3>
-                    </div><!-- /.box-header -->
+                    </div>
+                    <input type="hidden" value="${sucesso}" id="sucesso">
+                    <input type="hidden" value="${deletado}" id="deletado">
                     <div class="box-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
@@ -49,9 +55,9 @@
                                 </c:if>                                
                             </tbody>
                         </table>
-                    </div><!-- /.box-body -->
-                </div><!-- /.box -->
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </section><!-- /.content -->
-</div><!-- /.content-wrapper -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

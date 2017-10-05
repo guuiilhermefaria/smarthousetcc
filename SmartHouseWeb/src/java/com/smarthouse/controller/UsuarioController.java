@@ -15,7 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @RestController
 @RequestMapping("/usuario")
-public class UsuarioController implements BaseController<Usuario>{
+public class UsuarioController implements BaseController<Usuario> {
 
     private static final String USUARIO = "usuario";
     private static final String RELATORIO = "relatorio";
@@ -31,7 +31,7 @@ public class UsuarioController implements BaseController<Usuario>{
         return mv;
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView loginAdministradorPost() {
         ModelAndView mv = new ModelAndView();
         return mv;
@@ -42,12 +42,14 @@ public class UsuarioController implements BaseController<Usuario>{
         ModelAndView mv = new ModelAndView("redirect:/" + USUARIO);
         if (pojo.getId() == null) {
             service.create(pojo);
+            redAttr.addFlashAttribute("sucesso", "Usuário criado com sucesso");
         } else {
             service.update(pojo);
+            redAttr.addFlashAttribute("sucesso", "Usuário atualizado com sucesso");
         }
         return mv;
     }
-   
+
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView readByCriteria() {
         ModelAndView mv = new ModelAndView(USUARIO + "/list");
@@ -56,9 +58,10 @@ public class UsuarioController implements BaseController<Usuario>{
     }
 
     @RequestMapping(value = "{id}/excluir", method = RequestMethod.GET)
-    public ModelAndView delete(@PathVariable Long id) {
+    public ModelAndView delete(@PathVariable Long id, RedirectAttributes redAttr) {
         ModelAndView mv = new ModelAndView("redirect:/" + USUARIO);
         service.delete(id);
+        redAttr.addFlashAttribute("deletado", "Usuário deletado com sucesso");
         return mv;
     }
 
