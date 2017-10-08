@@ -64,7 +64,7 @@ INSERT INTO tipo_usuario(t_usu_nome) VALUES('Morador');
 INSERT INTO tipo_de_ligacao(t_lig_nome) VALUES('Ligar/Desligar');
 INSERT INTO tipo_de_ligacao(t_lig_nome) VALUES('Injetar');
 
-INSERT INTO usuario (usu_nome, usu_email, usu_senha, usu_tipo_usuario_fk) VALUES('Admin','admin@gmail.com', 'admin', 1);
+INSERT INTO usuario (usu_nome, usu_email, usu_senha, usu_tipo_usuario_fk) VALUES('Admin','admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 -----------------------------------------------------------------------Povoamento cômodo-----------------------------------------------------------------------
 INSERT INTO comodo(com_nome) VALUES('Área');

@@ -5,12 +5,12 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Dipositivos
+            Dispositivos
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Ínicio</a></li>
-            <li><a href="<c:url value="/dipositivo"/>">Novo Dipositivo</a></li>
-            <li class="active">Dipositivo</li>
+            <li><a href="<c:url value="/dispositivo"/>">Novo Dispositivo</a></li>
+            <li class="active">Dispositivo</li>
         </ol>
     </section>
     <!-- Principal content -->
@@ -19,7 +19,7 @@
             <div class="col-xs-12">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Novo Dipositivo</h3>
+                        <h3 class="box-title">Novo Dispositivo</h3>
                     </div>
                     <c:url value="/dispositivo" var="url" />
                     <!--Formulário de cadastro Dispositivo-->
@@ -47,7 +47,7 @@
                             </div>
                             <!--Lista de cômodos para um dispositivo ser atrelado-->
                             <div class="form-group">
-                                <label for="comodo">Comodo</label>
+                                <label for="comodo">Cômodo</label>
                                 <select class="form-control" name="comodo.id">
                                     <option value="" selected>Selecione...</option>                       
                                     <c:if test="${not empty list}">                                

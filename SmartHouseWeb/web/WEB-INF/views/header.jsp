@@ -20,7 +20,7 @@
                 <!--Dropdown para mostrar o Nome do usuário e deslogar da aplicação-->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="hidden-xs">${usuarioLogado.nome}</span>
+                        <span class="hidden-xs">Usuário: ${usuarioLogado.nome}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="user-header">

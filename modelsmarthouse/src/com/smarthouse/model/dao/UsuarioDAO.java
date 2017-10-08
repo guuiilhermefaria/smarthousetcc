@@ -4,6 +4,7 @@ import com.smarthouse.model.base.BaseDAO;
 import com.smarthouse.model.criteria.UsuarioCriteria;
 import com.smarthouse.model.entity.TipoUsuario;
 import com.smarthouse.model.entity.Usuario;
+import com.smarthouse.model.util.Md5Util;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,7 +22,7 @@ public class UsuarioDAO implements BaseDAO<Usuario> {
         int i = 0;
         ps.setString(++i, entity.getNome());
         ps.setString(++i, entity.getEmail());
-        ps.setString(++i, entity.getSenha());
+        ps.setString(++i, Md5Util.toMd5(entity.getSenha()));
         ps.setLong(++i, entity.getTipo_usuario().getId());
 
         ResultSet rs = ps.executeQuery();
@@ -39,7 +40,7 @@ public class UsuarioDAO implements BaseDAO<Usuario> {
         int i = 0;
         ps.setString(++i, entity.getNome());
         ps.setString(++i, entity.getEmail());
-        ps.setString(++i, entity.getSenha());
+        ps.setString(++i, Md5Util.toMd5(entity.getSenha()));
         ps.setLong(++i, entity.getTipo_usuario().getId());
         ps.setLong(++i, entity.getId());
         ps.execute();

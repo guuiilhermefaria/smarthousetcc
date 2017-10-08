@@ -3,13 +3,8 @@
 
 <aside class="main-sidebar">
     <section class="sidebar">
-        <div class="user-panel">
-            <div class="pull-left info" >
-                <p>${usuarioLogado.nome}</p>
-            </div>
-        </div>       
         <ul class="sidebar-menu">
-            <li class="header">MENU - CADASTRO</li>
+            <li class="header">CADASTRO</li>
                 <c:if test="${usuarioLogado.tipo_usuario.nome == 'Administrador'}">
                 <!--Opções para cadastro e listagem de usuários-->
                 <li class="treeview">
@@ -70,7 +65,7 @@
                         <li><a href="<c:url value="/recado"/>"><i class="fa fa-list"></i> Listar</a></li>
                     </ul>
                 </li>          
-                <li class="header">MENU - GERENCIAR</li>
+                <li class="header">GERENCIAR</li>
                 <!--Listagens de dispositivos a serem gerenciados-->
                 <li class="treeview">
                     <a href="<c:url value="/monitorar/monitorarHouse"/>">
@@ -78,7 +73,7 @@
                     </a>
                 </li>
             </c:if>
-            <li class="header">MENU - RELATÓRIO</li>
+            <li class="header">RELATÓRIO</li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i> <span>Relatórios</span>

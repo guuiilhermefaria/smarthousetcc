@@ -9,13 +9,13 @@ $(function () {
         var effect = idButton.replace("button", "effect");
         state = $("input[name='estado" + num + "']").val();
         if (state == "true") {
-            desliga(effect, num);
             desligarAjax(num);
+            desliga(effect, num);
         } else {
             var tipo = ($("input[name='tipo" + num + "']").val());
             if (tipo == "Injetar") {
+                ligarDesligarAjax(num);
                 ligaDesliga(effect, num);
-//                ligarDesligarAjax(num);
             } else {
                 ligarAjax(num);
                 liga(effect, num);
@@ -23,72 +23,50 @@ $(function () {
         }
         state = !state;
     });
-//
+
 //    $(".button3").on("click", function () {
 //        buscaReles();
 //    });
 
     function buscaReles() {
         $.ajax({
-            url: 'http://192.168.0.110/',
-            type: "GET",
-            data: "",
-            dataType: "html"
-
-        }).done(function (resposta) {
-            trataRetorno(resposta);
-        }).fail(function (jqXHR, textStatus) {
-//            console.log("Request failed: " + textStatus);
-        }).always(function () {
-//            console.log("completou");
+            type: 'GET',
+            dataType: 'json',
+            timeout: 2000, //2 second timeout
+            url: 'http://192.168.0.110', //URL solicitada
+            success: function (data) { //O HTML é retornado em 'data'
+                console.log("");
+                console.log("----------------");
+                $.each(data[0], function (key, val) {
+                    console.log("*** " + key + "-" + val);
+                    confereReles(key, val);
+                    $("#foraRede").hide(500);
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                //console.log("AAAAAAAAAAA");
+                $("#foraRede").show(400);
+            }
         });
     }
 
-    function trataRetorno(data) {
-        //data = data.replaceAll(" ", "");
-        //alert(data);
-        var rele1 = (data.substring(0, 7));
-        var rele2 = (data.substring(9, 16));
-        var rele3 = (data.substring(18, 25));
-        var rele4 = (data.substring(27, 34));
-        var rele5 = (data.substring(36, 43));
-        var rele6 = (data.substring(45, 52));
-        var rele7 = (data.substring(54, 61));
-        var rele8 = (data.substring(63, 70));
-        confereReles(rele1);
-        confereReles(rele2);
-        confereReles(rele3);
-        confereReles(rele4);
-        confereReles(rele5);
-        confereReles(rele6);
-        confereReles(rele7);
-        confereReles(rele8);
-    }
-
     function temporizadorReles() {
-//        console.log("");
         buscaReles();
         setTimeout(function () {
             temporizadorReles();
         }, 2000);
     }
 
-    function confereReles(rel) {
+    function confereReles(rel, val) {
         var rele = (rel.substring(4, 5));
         var numRele = rele;
-        var valorRele = (rel.substring(6, 7));
-//        console.log(numRele);
-//        console.log(valorRele);
         rele = "effect" + rele;
-//        console.log("rele" + rele + " num" + numRele + " val-" + valorRele);
-        if (valorRele === '1') {
-//            console.log("Releeee" + rele);
-            liga(rele, valorRele);
+        if (val == '1') {
+            liga(rele, val);
             $("input[name='estado" + numRele + "']").val(true);
         } else {
-            desliga(rele, valorRele);
+            desliga(rele, val);
             $("input[name='estado" + numRele + "']").val(false);
-//                console.log($("input[name='estado" + numRele + "']").val());
         }
     }
 
@@ -119,31 +97,40 @@ $(function () {
 
     function ligaDesliga(aux, num) {
         liga(aux, num);
-        ligarAjax(num);
         setTimeout(function () {
             desliga(aux, num);
-            desligarAjax(num);
-        }, 500);
+        }, 1500);
     }
 
     function ligarAjax(value) {
         $.ajax({
             type: 'POST',
-            url: 'http://192.168.0.110/?ligar' + value, //URL solicitada
-            success: function (data) { //O HTML é retornado em 'data'
-//                    console.log("Ligou"); //Se sucesso um alert com o conteúdo retornado pela URL solicitada será exibido.
-//                    liga("effect" + value, value);
+            dataType: 'json',
+            url: 'http://192.168.0.110/?ligar' + value,
+            success: function (data) {
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //console.log("Sem sucesso"); //Se sucesso um alert com o conteúdo retornado pela URL solicitada será exibido.
+            }
+        });
+    }
+
+    function ligarDesligarAjax(value) {
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: 'http://192.168.0.110/?ligarDesligar' + value,
+            success: function (data) {
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
             }
         });
     }
     function desligarAjax(value) {
         $.ajax({
+            type: 'POST',
+            dataType: 'json',
             url: 'http://192.168.0.110/?desligar' + value, //URL solicitada
             success: function (data) { //O HTML é retornado em 'data'
-//                    desliga("effect" + value, value);
             }
         });
     }

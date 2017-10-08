@@ -5,6 +5,7 @@ import com.smarthouse.model.base.service.BaseUsuarioService;
 import com.smarthouse.model.criteria.UsuarioCriteria;
 import com.smarthouse.model.dao.UsuarioDAO;
 import com.smarthouse.model.entity.Usuario;
+import com.smarthouse.model.util.Md5Util;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -108,12 +109,13 @@ public class UsuarioService implements BaseUsuarioService {
         Usuario usuario = null;
         Map<Long, Object> criteria = new HashMap<>();
         criteria.put(UsuarioCriteria.EMAIL_EQ, email);
-        criteria.put(UsuarioCriteria.SENHA_EQ, senha);
+//        criteria.put(UsuarioCriteria.SENHA_EQ, senha);
         UsuarioDAO dao = new UsuarioDAO();
         List<Usuario> usuarioList = dao.readByCriteria(conn, criteria);
         if (usuarioList.size() != 0) {
             Usuario aux = usuarioList.get(0);
-            if (aux.getEmail().equals(email) && aux.getSenha().equals(senha)) {
+            String senhaCrip = Md5Util.toMd5(senha);
+            if (aux.getSenha().equals(senhaCrip)) {
                 usuario = aux;
             }
         }

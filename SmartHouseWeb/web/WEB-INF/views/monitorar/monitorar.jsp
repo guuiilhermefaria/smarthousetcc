@@ -28,6 +28,19 @@
         color: #333;
         font-size: 16px;
     }
+    #foraRede{
+        background-color: #F00;  
+        color: #FFF;
+        font-size: 12px;
+        height: 25px;
+    }
+    #errorRede{
+        color: #FFF;
+        font-size: 15px;
+        padding-top: 6px;
+        padding-left: 6px;
+        font-weight: bold;
+    }
     h6{
         height: 25px;
         background-color: #FFF;  
@@ -53,6 +66,7 @@
     </section>
     <!-- Principal content -->
     <section class="content">
+        <div id="foraRede" ><h3 id="errorRede">Fora da rede</h3></div>
         <div class="row">
             <div class="col-xs-12">
                 <div class="box box-primary">
@@ -117,6 +131,21 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>      
+        <div id="component-demo-container" style="margin-top: -15px; margin-left: -45px;">
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="onoffswitch1" checked="">
+                <label class="onoffswitch-label" for="onoffswitch1">
+                    <div class="onoffswitch-inner"></div>
+                    <span class="onoffswitch-switch"></span></label>
             </div>
         </div>
     </section>
