@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class RecadoController implements BaseController<Recado>{
 
     private static final String RECADO = "recado";
-    private RecadoService service = new RecadoService();
+    private static final RecadoService service = new RecadoService();
 
     @Override
     public ModelAndView save(Recado pojo, RedirectAttributes redAttr) {

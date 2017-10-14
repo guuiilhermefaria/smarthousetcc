@@ -2,7 +2,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <aside class="main-sidebar">
-    <section class="sidebar">
+    <section class="sidebar" style="height: auto;">
         <ul class="sidebar-menu">
             <li class="header">CADASTRO</li>
                 <c:if test="${usuarioLogado.tipo_usuario.nome == 'Administrador'}">
@@ -68,7 +68,7 @@
                 <li class="header">GERENCIAR</li>
                 <!--Listagens de dispositivos a serem gerenciados-->
                 <li class="treeview">
-                    <a href="<c:url value="/monitorar/monitorarHouse"/>">
+                    <a href="<c:url value="/monitorar"/>">
                         <i class="fa fa-eye"></i> <span>Gerenciar Casa</span>
                     </a>
                 </li>

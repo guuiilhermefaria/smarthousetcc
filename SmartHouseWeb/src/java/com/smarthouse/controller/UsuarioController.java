@@ -8,12 +8,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RestController
 @RequestMapping("/usuario")
 public class UsuarioController implements BaseController<Usuario> {
 
@@ -21,21 +19,8 @@ public class UsuarioController implements BaseController<Usuario> {
     private static final String RELATORIO = "relatorio";
     private static final String ADMINISTRADOR = "administrador";
 
-    private UsuarioService service = new UsuarioService();
-    private TipoUsuarioService tus = new TipoUsuarioService();
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView loginAdministradorGet() {
-        ModelAndView mv = new ModelAndView(ADMINISTRADOR + "/pagina_inicial_adm");
-
-        return mv;
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView loginAdministradorPost() {
-        ModelAndView mv = new ModelAndView();
-        return mv;
-    }
+    private static final  UsuarioService service = new UsuarioService();
+    private static final  TipoUsuarioService tus = new TipoUsuarioService();
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView save(@ModelAttribute Usuario pojo, RedirectAttributes redAttr) {
@@ -74,4 +59,5 @@ public class UsuarioController implements BaseController<Usuario> {
         mv.addObject("list", tus.readByCriteria(null));
         return mv;
     }
+    
 }

@@ -11,7 +11,7 @@
             Relés
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Ínicio</a></li>
+            <li><a href="<c:url value="home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
             <li><a href="<c:url value="/comodo"/>">Relés</a></li>
             <li class="active">Lista de Relés</li>
         </ol>
@@ -33,7 +33,7 @@
                                     <th width="55%">Nome</th>
                                     <th width="10%">Porta</th>
                                     <th width="20%">Dispositivo</th>
-                                    <th width="15%">Editar-Excluir</th>
+                                    <th width="15%">Editar Excluir</th>
                                 </tr>
                             </thead>
                             <tbody>

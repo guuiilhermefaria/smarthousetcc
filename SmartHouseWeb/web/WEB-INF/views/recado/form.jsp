@@ -6,7 +6,7 @@
             Recado
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Ínicio</a></li>
+            <li><a href="<c:url value="home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
             <li><a href="<c:url value="/recado"/>">Novo Recado</a></li>
             <li class="active">Recado</li>
         </ol>

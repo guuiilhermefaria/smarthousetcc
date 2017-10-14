@@ -109,7 +109,6 @@ public class UsuarioService implements BaseUsuarioService {
         Usuario usuario = null;
         Map<Long, Object> criteria = new HashMap<>();
         criteria.put(UsuarioCriteria.EMAIL_EQ, email);
-//        criteria.put(UsuarioCriteria.SENHA_EQ, senha);
         UsuarioDAO dao = new UsuarioDAO();
         List<Usuario> usuarioList = dao.readByCriteria(conn, criteria);
         if (usuarioList.size() != 0) {

@@ -11,7 +11,7 @@
             Cômodos
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Ínicio</a></li>
+            <li><a href="<c:url value="/home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
             <li><a href="<c:url value="/comodo"/>">Cômodos</a></li>
             <li class="active">Lista de Cômodos</li>
         </ol>
@@ -32,7 +32,7 @@
                             <thead>
                                 <tr>
                                     <th width="85%">Nome</th>
-                                    <th width="15%">Editar-Excluir</th>
+                                    <th width="15%">Editar Excluir</th>
                                 </tr>
                             </thead>
                             <tbody>

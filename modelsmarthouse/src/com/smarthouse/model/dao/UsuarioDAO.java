@@ -35,12 +35,19 @@ public class UsuarioDAO implements BaseDAO<Usuario> {
 
     @Override
     public void update(Connection conn, Usuario entity) throws Exception {
-        String query = "UPDATE usuario SET usu_nome=?, usu_email=?, usu_senha=?, usu_tipo_usuario_fk=? WHERE usu_id=?;";
+        String query = "";
+        if (!entity.getSenha().isEmpty()) {
+            query = "UPDATE usuario SET usu_nome=?, usu_email=?, usu_senha=?, usu_tipo_usuario_fk=? WHERE usu_id=?;";
+        } else {
+            query = "UPDATE usuario SET usu_nome=?, usu_email=?, usu_tipo_usuario_fk=? WHERE usu_id=?;";
+        }
         PreparedStatement ps = conn.prepareStatement(query);
         int i = 0;
         ps.setString(++i, entity.getNome());
         ps.setString(++i, entity.getEmail());
-        ps.setString(++i, Md5Util.toMd5(entity.getSenha()));
+        if (!entity.getSenha().isEmpty()) {
+            ps.setString(++i, Md5Util.toMd5(entity.getSenha()));
+        }
         ps.setLong(++i, entity.getTipo_usuario().getId());
         ps.setLong(++i, entity.getId());
         ps.execute();

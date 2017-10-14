@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<script src="<c:url value="/resources/validacaoJS/validacaoUsuario.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/validacaoJS/validacaoPerfilUsuario.js"/>" type="text/javascript"></script>
+<link rel="stylesheet" href="<c:url value="/resources/toast/jquery.toast.min.css"/>">
+<script src="<c:url value="/resources/toast/jquery.toast.min.js"/>" type="text/javascript"></script>
 
 <div class="content-wrapper">
     <section class="content-header">
@@ -9,8 +11,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="<c:url value="/home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
-            <li><a href="<c:url value="/usuario"/>">Novo Usuário</a></li>
-            <li class="active">Usuário</li>
+            <li class="active">Perfil do Usuário</li>
         </ol>
     </section>
     <!-- Principal content -->
@@ -19,9 +20,10 @@
             <div class="col-xs-12">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Novo Usuário</h3>
+                        <h3 class="box-title">Perfil do Usuário</h3>
                     </div>
-                    <c:url value="/usuario" var="url" />
+                    <input type="hidden" value="${sucesso}" id="sucesso">
+                    <c:url value="/perfil" var="url" />
                     <!-- Formulário de cadastro de Usuário -->                    
                     <form role="form" method="POST" action="${url}" onsubmit="return validateRegisterUsuario()">
                         <input type="hidden" id="id" placeholder="id" name="id" value="${pojo.id}">
@@ -61,7 +63,7 @@
                             </div>                            
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Atualizar</button>
                         </div>
                     </form>
                 </div>
@@ -69,16 +71,4 @@
         </div>
     </section>
 </div>
-<script type="text/javascript">
-    $(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
-            "bPaginate": true,
-            "bLengthChange": false,
-            "bFilter": false,
-            "bSort": true,
-            "bInfo": true,
-            "bAutoWidth": false
-        });
-    });
-</script>
+

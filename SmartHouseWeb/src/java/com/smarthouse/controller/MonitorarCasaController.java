@@ -12,16 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class MonitorarCasaController {
 
     private static final String MONITORAR = "monitorar";
-    private ComodoService cs = new ComodoService();
-    private DispositivoService ds  = new DispositivoService();
+    private static final ComodoService cs = new ComodoService();
+    private static final DispositivoService ds  = new DispositivoService();
     
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView monitorar() {
-        ModelAndView mv = new ModelAndView(MONITORAR + "/form");
-        return mv;
-    }
-
-    @RequestMapping(value = "/monitorarHouse", method = RequestMethod.GET)
     public ModelAndView monitorarHouse() {
         ModelAndView mv = new ModelAndView(MONITORAR + "/monitorar");
         mv.addObject("list", cs.readAll());

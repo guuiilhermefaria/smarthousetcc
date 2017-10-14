@@ -12,19 +12,14 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("efetuaLogin")
 public class LoginController {
 
-    @RequestMapping( method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ModelAndView efetuaLogin(HttpSession session, Usuario usuarioALogar) throws Exception {
         ModelAndView mv = null;
         UsuarioService service = new UsuarioService();
         Usuario usuario = service.login(usuarioALogar.getEmail(), usuarioALogar.getSenha());
         if (usuario != null) {
-            if (usuario.getTipo_usuario().getNome().equals("Administrador")) {
-                session.setAttribute("usuarioLogado", usuario);
-                mv = new ModelAndView("paginaInicial/pagina_inicial");
-            } else {
-                session.setAttribute("usuarioLogado", usuario);
-                mv = new ModelAndView("paginaInicial/pagina_inicial");
-            }
+            session.setAttribute("usuarioLogado", usuario);
+            mv = new ModelAndView("redirect:/home");
         } else {
             mv = new ModelAndView("redirect:/");
         }

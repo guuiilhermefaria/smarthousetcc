@@ -15,7 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class ComodoController implements BaseController<Comodo> {
 
     private static final String COMODO = "comodo";
-    private ComodoService service = new ComodoService();
+    private static final ComodoService service = new ComodoService();
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView save(@ModelAttribute Comodo pojo, RedirectAttributes redAttr) {

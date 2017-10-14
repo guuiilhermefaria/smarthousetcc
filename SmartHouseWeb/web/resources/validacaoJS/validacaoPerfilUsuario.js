@@ -16,7 +16,7 @@ function validateRegisterUsuario() {
         $('.form-control-feedback').css('display', 'block');
         $('#input-email').addClass('has-error has-feedback');
     }
-    if ($('#senha').val() === "") {
+    if (($('#senha').val() === "") && ($('#email').val() !== "") && ($('#nome').val() !== "")) {
         retorno = false;
         $('#senhaError').css('display', 'block');
         $('#senhaError').css('color', '#f00');
@@ -45,21 +45,6 @@ $(function () {
         $.toast({
             text: "<h5>" + msg + "!</h5>",
             bgColor: 'green',
-            position: {top: 115, right: 21},
-            hideAfter: 2000,
-            icon: 'success',
-            showHideTransition: 'plain',
-            stack: false
-        });
-    }
-}
-);
-$(function () {
-    var msg = $('#deletado').val();
-    if (msg != "") {
-        $.toast({
-            text: "<h5>" + msg + "!</h5>",
-            bgColor: 'red',
             position: {top: 115, right: 21},
             hideAfter: 2000,
             icon: 'success',

@@ -11,7 +11,7 @@
             Dispositivos
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Ínicio</a></li>
+            <li><a href="<c:url value="/home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
             <li><a href="<c:url value="/dispositivo"/>">Dispositivos</a></li>
             <li class="active">Lista de Dispositivos</li>
         </ol>
@@ -34,7 +34,7 @@
                                     <th width="50%">Nome</th>
                                     <th width="20%">Cômodo</th>
                                     <th width="15%">Tipo de Ligação</th>
-                                    <th width="15%">Editar-Excluir</th>
+                                    <th width="15%">Editar Excluir</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,6 +62,3 @@
         </div>
     </section>
 </div>
-
-
-

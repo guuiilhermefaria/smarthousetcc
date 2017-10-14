@@ -17,9 +17,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class DispositivoController implements BaseController<Dispositivo> {
 
     private static final String DISPOSITIVO = "dispositivo";
-    private DispositivoService service = new DispositivoService();
-    private TipoDeLigacaoService tdls = new TipoDeLigacaoService();
-    private ComodoService cs = new ComodoService();
+    private static final DispositivoService service = new DispositivoService();
+    private static final TipoDeLigacaoService tdls = new TipoDeLigacaoService();
+    private static final ComodoService cs = new ComodoService();
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView save(@ModelAttribute Dispositivo pojo, RedirectAttributes redAttr) {

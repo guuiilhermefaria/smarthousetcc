@@ -1,12 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<script src="<c:url value="/resources/validacaoJS/validacaoUsuario.js"/>" type="text/javascript"></script>
+<link rel="stylesheet" href="<c:url value="/resources/toast/jquery.toast.min.css"/>">
+<script src="<c:url value="/resources/toast/jquery.toast.min.js"/>" type="text/javascript"></script>
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
             Usuários
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Ínicio</a></li>
+            <li><a href="<c:url value="/home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
             <li><a href="<c:url value="/usuario"/>">Usuários</a></li>
             <li class="active">Lista de Usuários</li>
         </ol>
@@ -19,6 +22,8 @@
                     <div class="box-header">
                         <h3 class="box-title">Lista de Usuários</h3>
                     </div>
+                    <input type="hidden" value="${sucesso}" id="sucesso">
+                    <input type="hidden" value="${deletado}" id="deletado">
                     <div class="box-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>

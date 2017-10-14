@@ -70,20 +70,20 @@ INSERT INTO usuario (usu_nome, usu_email, usu_senha, usu_tipo_usuario_fk) VALUES
 INSERT INTO comodo(com_nome) VALUES('Área');
 INSERT INTO comodo(com_nome) VALUES('Banheiro');
 INSERT INTO comodo(com_nome) VALUES('Cozinha');
-INSERT INTO comodo(com_nome) VALUES('Sala');
 INSERT INTO comodo(com_nome) VALUES('Varanda');
+INSERT INTO comodo(com_nome) VALUES('Sala');
 INSERT INTO comodo(com_nome) VALUES('Garagem');
-INSERT INTO comodo(com_nome) VALUES('Escritório');
 INSERT INTO comodo(com_nome) VALUES('Quarto');
+INSERT INTO comodo(com_nome) VALUES('Escritório');
 -----------------------------------------------------------------------Povoamento dispositivo-----------------------------------------------------------------------
 INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Lâmpada da Área', 1, 1);
 INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Lâmpada do Banheiro', 2, 1);
 INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Microondas', 3, 1);
 INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Luz da Varanda', 4, 1);
-INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Luminária', 5, 1);
+INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Rádio', 5, 1);
 INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Portão', 6, 2);
-INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Luminária', 7, 1);
-INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Ventilador', 8, 1);
+INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Ventilador', 7, 1);
+INSERT INTO dispositivo(dis_nome, dis_comodo_fk, dis_tipo_de_ligacao_fk) VALUES('Luminária', 8, 1);
 -----------------------------------------------------------------------Povoamento relé-----------------------------------------------------------------------
 INSERT INTO rele(rel_nome, rel_porta, rel_dispositivo_fk) VALUES('Rele 1', 1, 1);
 INSERT INTO rele(rel_nome, rel_porta, rel_dispositivo_fk) VALUES('Rele 2', 2, 2);
@@ -94,6 +94,5 @@ INSERT INTO rele(rel_nome, rel_porta, rel_dispositivo_fk) VALUES('Rele 6', 6, 6)
 INSERT INTO rele(rel_nome, rel_porta, rel_dispositivo_fk) VALUES('Rele 7', 7, 7);
 INSERT INTO rele(rel_nome, rel_porta, rel_dispositivo_fk) VALUES('Rele 8', 8, 8);
 
--- 
--- portao = 6
--- ventilador 7
+-- portão = relé 6
+-- ventilador = relé 7

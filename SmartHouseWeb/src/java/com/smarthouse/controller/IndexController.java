@@ -12,15 +12,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView loginPost() {
+    public ModelAndView homePOST() {
         ModelAndView mv = new ModelAndView();
-
         return mv;
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView readByCriteria() {
-        ModelAndView mv = new ModelAndView("morador/pagina_icial");
+    public ModelAndView homeGET() {
+        ModelAndView mv = new ModelAndView("paginaInicial/pagina_inicial");
 
         return mv;
     }

@@ -1,32 +1,40 @@
 $(function () {
     window.onload = function () {
         temporizadorReles();
+        temporizadorTempUmid();
     }
     var state = false;
-    $(".button").on("click", function () {
-        var idButton = this.id;
-        var num = idButton.replace("button", "");
-        var effect = idButton.replace("button", "effect");
-        state = $("input[name='estado" + num + "']").val();
-        if (state == "true") {
+    $(".onoffswitch-label").on("click", function () {
+        var onOff = this.id;
+        var num = onOff.replace("onoffswitch-label", "");
+        console.log("*************************");
+        console.log($("#myonoffswitch" + num).is(":checked"));
+
+        if ($("#myonoffswitch" + num).is(":checked")) {
             desligarAjax(num);
-            desliga(effect, num);
         } else {
             var tipo = ($("input[name='tipo" + num + "']").val());
             if (tipo == "Injetar") {
                 ligarDesligarAjax(num);
-                ligaDesliga(effect, num);
             } else {
                 ligarAjax(num);
-                liga(effect, num);
             }
         }
-        state = !state;
+//        if (state == "true") {
+//            desligarAjax(num);
+//            desliga(effect, num);
+//        } else {
+//            var tipo = ($("input[name='tipo" + num + "']").val());
+//            if (tipo == "Injetar") {
+//                ligarDesligarAjax(num);
+//                ligaDesliga(effect, num);
+//            } else {
+//                ligarAjax(num);
+//                liga(effect, num);
+//            }
+//        }
+        //state = !state;
     });
-
-//    $(".button3").on("click", function () {
-//        buscaReles();
-//    });
 
     function buscaReles() {
         $.ajax({
@@ -49,6 +57,24 @@ $(function () {
             }
         });
     }
+    function buscaTempUmid() {
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            timeout: 2000, //2 second timeout
+            url: 'http://192.168.0.110', //URL solicitada
+            success: function (data) { //O HTML é retornado em 'data'
+                $('#umidade').html("Umidade do ar: " + data[1].umidade);
+                $('#temperatura').html("Temperatura do ambiente: " + data[1].temperatura);
+                $("#foraSensorTemp").hide(1000);
+                $("#foraSensorUmid").hide(1000);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $("#foraSensorTemp").show(400);
+                $("#foraSensorUmid").show(400);
+            }
+        });
+    }
 
     function temporizadorReles() {
         buscaReles();
@@ -56,17 +82,25 @@ $(function () {
             temporizadorReles();
         }, 2000);
     }
+    function temporizadorTempUmid() {
+        buscaTempUmid();
+        setTimeout(function () {
+            temporizadorTempUmid();
+        }, 2000);
+    }
 
     function confereReles(rel, val) {
-        var rele = (rel.substring(4, 5));
-        var numRele = rele;
-        rele = "effect" + rele;
+        var num = (rel.substring(4, 5));
         if (val == '1') {
-            liga(rele, val);
-            $("input[name='estado" + numRele + "']").val(true);
+            $("input[name='estado" + num + "']").val(true);
+            if (!$("#myonoffswitch" + num).is(":checked")) {
+                $("#onoffswitch-label" + num).click();
+            }
         } else {
-            desliga(rele, val);
-            $("input[name='estado" + numRele + "']").val(false);
+            $("input[name='estado" + num + "']").val(false);
+            if ($("#myonoffswitch" + num).is(":checked")) {
+                $("#onoffswitch-label" + num).click();
+            }
         }
     }
 

@@ -8,7 +8,7 @@
             Recados
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Ínicio</a></li>
+            <li><a href="<c:url value="home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
             <li><a href="<c:url value="/recado"/>">Recados</a></li>
             <li class="active">Lista de Recados</li>
         </ol>
@@ -23,7 +23,7 @@
                     <div class="box-body">
                         <c:if test="${not empty list}">
                             <div class="row">              
-                                <c:forEach items="${list}" var="recado" varStatus="i">                           
+                                <c:forEach items="${list}" var="recado">                           
                                     <div class="col-md-4">
                                         <!-- Primary box -->
                                         <div class="box box-solid box-primary">
@@ -53,16 +53,3 @@
         </div>
     </section>
 </div>
-<script type="text/javascript">
-    $(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
-            "bPaginate": true,
-            "bLengthChange": false,
-            "bFilter": false,
-            "bSort": true,
-            "bInfo": true,
-            "bAutoWidth": false
-        });
-    });
-</script>

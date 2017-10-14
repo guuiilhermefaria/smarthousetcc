@@ -15,7 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class ReleController implements BaseController<Rele>{
 
     private static final String RELE = "rele";
-    private ReleService service = new ReleService();
+    private static final ReleService service = new ReleService();
 
     public ModelAndView save(@ModelAttribute Rele pojo, RedirectAttributes redAttr) {
         ModelAndView mv = new ModelAndView("redirect:/" + RELE);
