@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ReleRelatorio {
 
     @RequestMapping(method = RequestMethod.GET)
-//    @RequestMapping(value = "/comodo/pdf", method = RequestMethod.GET)
     public void streamPDF(HttpServletResponse response, HttpSession session) throws Exception {
         //Fonte dados
         Connection conn = ConnectionManager.getInstance().getConnection();
@@ -31,7 +30,6 @@ public class ReleRelatorio {
         Usuario usuario = new Usuario();
         usuario = (Usuario) session.getAttribute("usuarioLogado");
         parameters.put("USER", usuario.getNome());
-//        parameters.put("LOGO", ComodoRelatorio.class.getResource("/com/agrocomp/img/LogoAgroComp.png"));
         //Criando o relatório.
         InputStream report = ReleRelatorio.class.getResourceAsStream("/com/smarthouse/controller/relatorio/relatorio_rele.jasper");
         JasperPrint print = JasperFillManager.fillReport(report, parameters, conn);

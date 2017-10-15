@@ -25,7 +25,6 @@
                             <div class="row">              
                                 <c:forEach items="${list}" var="recado">                           
                                     <div class="col-md-4">
-                                        <!-- Primary box -->
                                         <div class="box box-solid box-primary">
                                             <div class="box-header">
                                                 <h3 class="box-title">${recado.usuario.nome}</h3>

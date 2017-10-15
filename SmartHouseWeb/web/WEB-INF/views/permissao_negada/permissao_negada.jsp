@@ -7,7 +7,7 @@
         </h1>
     </section>
     <div class="content-wrapper">
-        <!-- Main content -->
+        <!-- Principal content -->
         <section class="content">
             <div class="error-page">
                 <h2 class="headline text-yellow">403</h2>

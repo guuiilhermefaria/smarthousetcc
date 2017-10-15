@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!--Acesso arduino-->
 <script src="<c:url value="/resources/bootstrap/js/jquery-1.12.4.js"/>"></script>
 <script src="<c:url value="/resources/bootstrap/js/jquery-ui.js"/>"></script>
 <script src="<c:url value="/resources/acessoArduino/acessoArduinoJS.js"/>" type="text/javascript"></script>
@@ -102,7 +103,6 @@
 </style>
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Cômodos

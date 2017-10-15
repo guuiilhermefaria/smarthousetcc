@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!--Validação Usuário e toasty de cadastro e exclusão-->
 <script src="<c:url value="/resources/validacaoJS/validacaoUsuario.js"/>" type="text/javascript"></script>
 <link rel="stylesheet" href="<c:url value="/resources/toast/jquery.toast.min.css"/>">
 <script src="<c:url value="/resources/toast/jquery.toast.min.js"/>" type="text/javascript"></script>

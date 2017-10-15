@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!--Validacao dispositivo-->
 <script src="<c:url value="/resources/validacaoJS/validacaoDispositivo.js"/>" type="text/javascript"></script>
 
 <div class="content-wrapper">

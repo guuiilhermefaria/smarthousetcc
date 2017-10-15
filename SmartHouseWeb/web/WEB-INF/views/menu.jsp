@@ -34,7 +34,7 @@
                 <!--Opções para cadastro e listagem de dispositivos-->
                 <li class="treeview">
                     <a href="<c:url value="/dispositivo"/>">
-                        <i class="fa fa-tablet"></i>
+                        <i class="fa fa-lightbulb-o"></i>
                         <span>Dispositivo</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>

@@ -19,7 +19,7 @@ public class IndexController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView homeGET() {
-        ModelAndView mv = new ModelAndView("paginaInicial/pagina_inicial");
+        ModelAndView mv = new ModelAndView("pagina_inicial/pagina_inicial");
 
         return mv;
     }
