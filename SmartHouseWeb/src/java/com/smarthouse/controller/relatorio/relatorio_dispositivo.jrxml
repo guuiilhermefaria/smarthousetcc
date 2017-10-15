@@ -19,20 +19,20 @@ LEFT JOIN tipo_de_ligacao ON t_lig_id = dis_tipo_de_ligacao_fk]]>
 	<title>
 		<band height="72">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="6d8dc729-1abc-4048-b52f-b00863ea7ea0"/>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="72" backcolor="#006699" uuid="33a453ab-ca5b-4d2a-8829-c11ed6aa5f0b"/>
 				<staticText>
-					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="953b070a-bc25-4a12-827f-c43f733965e7"/>
+					<reportElement x="20" y="20" width="414" height="43" forecolor="#FFFFFF" uuid="c745c3d0-175f-44d8-ba1c-aa626b5dc6c0"/>
 					<textElement>
 						<font size="34" isBold="true"/>
 					</textElement>
-					<text><![CDATA[Dispositivos]]></text>
+					<text><![CDATA[Relatório de Dispositivos]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="7c8ff1f0-8231-49e2-82fe-8e85f77a9050"/>
+					<reportElement x="417" y="43" width="123" height="20" forecolor="#FFFFFF" uuid="594965ba-c227-4c00-a906-1e88f0f4af65"/>
 					<textElement textAlignment="Right">
 						<font size="14" isBold="false"/>
 					</textElement>
-					<text><![CDATA[relatório de dispositivos]]></text>
+					<text><![CDATA[SmartHouse]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -68,7 +68,7 @@ LEFT JOIN tipo_de_ligacao ON t_lig_id = dis_tipo_de_ligacao_fk]]>
 			<staticText>
 				<reportElement x="0" y="0" width="69" height="20" forecolor="#FFFFFF" uuid="f3f8b575-ea86-48c3-aa95-63e34d773ca0"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[ID]]></text>
+				<text><![CDATA[-]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="69" y="0" width="193" height="20" forecolor="#FFFFFF" uuid="3b0d5b18-b687-42b7-bebc-6afeb813074f"/>
@@ -83,7 +83,7 @@ LEFT JOIN tipo_de_ligacao ON t_lig_id = dis_tipo_de_ligacao_fk]]>
 			<staticText>
 				<reportElement x="422" y="0" width="133" height="20" forecolor="#FFFFFF" uuid="9e818714-50a4-4804-bc8b-803b8aa66604"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[TIPO]]></text>
+				<text><![CDATA[TIPO DO DISPOSITIVO]]></text>
 			</staticText>
 			<line>
 				<reportElement mode="Transparent" x="69" y="0" width="1" height="20" forecolor="#FFFFFF" backcolor="#99CCFF" uuid="657ecd87-2c99-411f-af64-1c8b3f9eaee8"/>
@@ -127,7 +127,7 @@ LEFT JOIN tipo_de_ligacao ON t_lig_id = dis_tipo_de_ligacao_fk]]>
 			<textField>
 				<reportElement x="423" y="0" width="132" height="20" uuid="5a89829a-f022-4b43-9fcb-20e53ff58b49"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{dis_nome}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{t_lig_nome}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement mode="Transparent" x="261" y="0" width="1" height="20" forecolor="#FFFFFF" backcolor="#99CCFF" uuid="4b54b830-438e-468d-85b5-da26ceb8daa5"/>

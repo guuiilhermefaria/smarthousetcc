@@ -25,7 +25,7 @@
                     <input type="hidden" value="${sucesso}" id="sucesso">
                     <c:url value="/perfil" var="url" />
                     <!-- Formulário de cadastro de Usuário -->                    
-                    <form role="form" method="POST" action="${url}" onsubmit="return validateRegisterUsuario()">
+                    <form role="form" method="POST" action="${url}" onsubmit="return validateUpdatePerfil()">
                         <input type="hidden" id="id" placeholder="id" name="id" value="${pojo.id}">
                         <div class="box-body">
                             <!--Campo input nome-->
@@ -47,7 +47,6 @@
                                 <label for="senha">Senha</label>
                                 <input type="password" class="form-control" id="senha" minlength="3" onkeypress="ocultaErro(this.name)" placeholder="senha" name="senha" value="${pojo.senha}">
                                 <span class="form-control-feedback" style="display: none"></span>
-                                <div id="senhaError" class="fieldError" style="display: none">Campo senha obrigatório!</div>
                             </div>
                             <!--Opções do tipo do usuário a ser cadastrado-->
                             <div class="form-group">

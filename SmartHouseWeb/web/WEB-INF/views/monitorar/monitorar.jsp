@@ -136,7 +136,7 @@
                                                             <div class="box-body">
                                                                 <c:if test="${dispositivo.rele != null}">
                                                                     <div class="button" >
-                                                                        <div class="onoffswitch" >
+                                                                        <div class="onoffswitch" style="margin-left: 20%; margin-top: 5%;">
                                                                             <input name="tipo${dispositivo.rele.porta}" type="hidden" value="${dispositivo.tipo_de_ligacao.nome}"/>
                                                                             <input type="checkbox" name="estado${dispositivo.rele.porta}" 
                                                                                    class="onoffswitch-checkbox" id="myonoffswitch${dispositivo.rele.porta}">
@@ -190,7 +190,7 @@
                                             </div>
                                             <div class="box-body">
                                                 <h2 class="text-center" id="umidade"></h2>
-                                                <div id="foraSensorUmid" ><h3 id="foraSensorUmid">Sensor de Umidade desligado</h3></div>
+                                                <div id="foraSensorUmid" ><h3 id="foraSensorUmid">Sensor desligado</h3></div>
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@
                                             </div>
                                             <div class="box-body">
                                                 <h2 class="text-center" id="temperatura"></h2>
-                                                <div id="foraSensorTemp" ><h3 id="foraSensorTemp">Sensor de Temperatura desligado</h3></div>
+                                                <div id="foraSensorTemp" ><h3 id="foraSensorTemp">Sensor desligado</h3></div>
                                             </div>
                                         </div>
                                     </div>

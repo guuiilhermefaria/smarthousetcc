@@ -9,7 +9,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="<c:url value="/home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
-            <li><a href="<c:url value="/usuario"/>">Novo Usuário</a></li>
+            <li><a href="<c:url value="/usuario/show"/>">Novo Usuário</a></li>
             <li class="active">Usuário</li>
         </ol>
     </section>
@@ -61,7 +61,8 @@
                             </div>                            
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <a class="btn btn-danger" href="${url}">Cancelar</a>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>
                     </form>
                 </div>
@@ -69,16 +70,4 @@
         </div>
     </section>
 </div>
-<script type="text/javascript">
-    $(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
-            "bPaginate": true,
-            "bLengthChange": false,
-            "bFilter": false,
-            "bSort": true,
-            "bInfo": true,
-            "bAutoWidth": false
-        });
-    });
-</script>
+

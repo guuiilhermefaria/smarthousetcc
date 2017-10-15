@@ -1,4 +1,4 @@
-function validateRegisterUsuario() {
+function validateUpdatePerfil() {
     var retorno = true;
     if ($('#nome').val() === "") {
         retorno = false;
@@ -16,14 +16,14 @@ function validateRegisterUsuario() {
         $('.form-control-feedback').css('display', 'block');
         $('#input-email').addClass('has-error has-feedback');
     }
-    if (($('#senha').val() === "") && ($('#email').val() !== "") && ($('#nome').val() !== "")) {
-        retorno = false;
-        $('#senhaError').css('display', 'block');
-        $('#senhaError').css('color', '#f00');
-        $('.form-control-feedback').addClass('glyphicon glyphicon-remove');
-        $('.form-control-feedback').css('display', 'block');
-        $('#input-senha').addClass('has-error has-feedback');
-    }
+//    if (($('#senha').val() === ""){
+//        retorno = false;
+//        $('#senhaError').css('display', 'block');
+//        $('#senhaError').css('color', '#f00');
+//        $('.form-control-feedback').addClass('glyphicon glyphicon-remove');
+//        $('.form-control-feedback').css('display', 'block');
+//        $('#input-senha').addClass('has-error has-feedback');
+//    }
     if (document.getElementById("senha").value === "") {
         retorno = false;
         document.getElementById('senhaError').style.display = 'block';

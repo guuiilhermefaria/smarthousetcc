@@ -26,33 +26,12 @@
                         <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha" value=""/>
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-8">    
-                            <div class="checkbox icheck">
-                                <label>
-                                    <input type="checkbox"> Lembrar-me
-                                </label>
-                            </div>                        
-                        </div>
-                        <div class="col-xs-4">
-                        </div>
-                    </div>
                     <button type="submit" class="btn btn-primary btn-block btn-flat">Logar</button>
                 </form>
-                <a href="#">Esqueceu a senha?</a><br>
             </div>
         </div>
         <script src="<c:url value="/resources/plugins/jQuery/jQuery-2.1.3.min.js"/>"></script>
         <script src="<c:url value="/resources/bootstrap/js/bootstrap.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/resources/plugins/iCheck/icheck.min.js"/>" type="text/javascript"></script>
-        <script>
-            $(function () {
-                $('input').iCheck({
-                    checkboxClass: 'icheckbox_square-blue',
-                    radioClass: 'iradio_square-blue',
-                    increaseArea: '20%' // optional
-                });
-            });
-        </script>
     </body>
 </html>

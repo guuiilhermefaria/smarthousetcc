@@ -21,9 +21,9 @@
                     <div class="box-header">
                         <h3 class="box-title">Novo Dispositivo</h3>
                     </div>
-                    <c:url value="/dispositivo" var="url" />
+                    <c:url value="/dispositivo" var="url"/>
                     <!--Formulário de cadastro Dispositivo-->
-                    <form role="form" method="POST" action="${url}" onclick="return validateRegisterDispositivo()">
+                    <form role="form" method="POST" action="${url}" onsubmit="return validateRegisterDispositivo()">
                         <input type="hidden" id="id" placeholder="id" name="id" value="${pojo.id}">
                         <div class="box-body">
                             <!--Campo input nome-->
@@ -59,7 +59,8 @@
                             </div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <a class="btn btn-danger" href="${url}">Cancelar</a>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>
                     </form>
                 </div>

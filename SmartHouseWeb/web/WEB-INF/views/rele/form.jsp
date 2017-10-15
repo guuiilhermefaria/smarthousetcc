@@ -7,7 +7,7 @@
             Relé
         </h1>
         <ol class="breadcrumb">
-            <li><a href="<c:url value="home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
+            <li><a href="<c:url value="/home"/>"><i class="fa fa-dashboard"></i> Ínicio</a></li>
             <li><a href="<c:url value="/rele"/>">Novo Relé</a></li>
             <li class="active">Relé</li>
         </ol>
@@ -53,7 +53,8 @@
                             </div>  
                         </div>                        
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <a class="btn btn-danger" href="${url}">Cancelar</a>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>
                     </form>
                 </div>

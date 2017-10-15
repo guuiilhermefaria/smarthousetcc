@@ -1,9 +1,7 @@
 $(function () {
     window.onload = function () {
         temporizadorReles();
-        temporizadorTempUmid();
     }
-    var state = false;
     $(".onoffswitch-label").on("click", function () {
         var onOff = this.id;
         var num = onOff.replace("onoffswitch-label", "");
@@ -20,20 +18,6 @@ $(function () {
                 ligarAjax(num);
             }
         }
-//        if (state == "true") {
-//            desligarAjax(num);
-//            desliga(effect, num);
-//        } else {
-//            var tipo = ($("input[name='tipo" + num + "']").val());
-//            if (tipo == "Injetar") {
-//                ligarDesligarAjax(num);
-//                ligaDesliga(effect, num);
-//            } else {
-//                ligarAjax(num);
-//                liga(effect, num);
-//            }
-//        }
-        //state = !state;
     });
 
     function buscaReles() {
@@ -43,35 +27,27 @@ $(function () {
             timeout: 2000, //2 second timeout
             url: 'http://192.168.0.110', //URL solicitada
             success: function (data) { //O HTML é retornado em 'data'
-                console.log("");
+                console.log("" + data);
                 console.log("----------------");
                 $.each(data[0], function (key, val) {
                     console.log("*** " + key + "-" + val);
                     confereReles(key, val);
                     $("#foraRede").hide(500);
                 });
+                if (data[1].umidade == 1000) {
+                    $("#foraSensorTemp").show(400);
+                    $("#foraSensorUmid").show(400);
+//                    $('#umidade').hide("Umidade do ar: " + data[1].umidade);
+//                    $('#temperatura').hide("Temperatura do ambiente: " + data[1].temperatura);
+                } else {
+                    $('#umidade').html("Umidade do ar: " + data[1].umidade);
+                    $('#temperatura').html("Temperatura do ambiente: " + data[1].temperatura);
+                    $("#foraSensorUmid").hide(1000);
+                    $("#foraSensorTemp").hide(1000);
+                }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //console.log("AAAAAAAAAAA");
                 $("#foraRede").show(400);
-            }
-        });
-    }
-    function buscaTempUmid() {
-        $.ajax({
-            type: 'GET',
-            dataType: 'json',
-            timeout: 2000, //2 second timeout
-            url: 'http://192.168.0.110', //URL solicitada
-            success: function (data) { //O HTML é retornado em 'data'
-                $('#umidade').html("Umidade do ar: " + data[1].umidade);
-                $('#temperatura').html("Temperatura do ambiente: " + data[1].temperatura);
-                $("#foraSensorTemp").hide(1000);
-                $("#foraSensorUmid").hide(1000);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                $("#foraSensorTemp").show(400);
-                $("#foraSensorUmid").show(400);
             }
         });
     }
@@ -80,12 +56,6 @@ $(function () {
         buscaReles();
         setTimeout(function () {
             temporizadorReles();
-        }, 2000);
-    }
-    function temporizadorTempUmid() {
-        buscaTempUmid();
-        setTimeout(function () {
-            temporizadorTempUmid();
         }, 2000);
     }
 
@@ -142,6 +112,7 @@ $(function () {
             dataType: 'json',
             url: 'http://192.168.0.110/?ligar' + value,
             success: function (data) {
+                console.log(data);
             },
             error: function (jqXHR, textStatus, errorThrown) {
             }

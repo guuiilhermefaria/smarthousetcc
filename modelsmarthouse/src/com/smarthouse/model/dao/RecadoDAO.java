@@ -65,7 +65,7 @@ public class RecadoDAO implements BaseDAO<Recado> {
     @Override
     public List<Recado> readByCriteria(Connection conn, Map<Long, Object> criteria) throws Exception {
         String query = "SELECT rec_id, rec_recado, rec_data_hora_recado, usu_id, usu_nome FROM recado ";
-        query += "LEFT JOIN usuario ON usu_id = rec_usuario_fk";
+        query += "LEFT JOIN usuario ON usu_id = rec_usuario_fk order by  rec_data_hora_recado desc ";
         List<Recado> list = new ArrayList<>();
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery(query);

@@ -24,7 +24,7 @@
                     </div>
                     <c:url value="/comodo" var="url" />
                     <!-- Form de cadastro de cômodo -->                    
-                    <form id="formComodo" role="form" method="POST" action="${url}" onsubmit="return validateRegisterComodo()">
+                    <form role="form" method="POST" action="${url}" onsubmit="return validateRegisterComodo()">
                         <input type="hidden" id="id" placeholder="id" name="id" value="${pojo.id}"/>
                         <div class="box-body">
                             <div id="nomeSuccess" class="fieldError"  style="color: #f00; display: none">
@@ -39,7 +39,8 @@
                             <div id="nomeError" class="fieldError" style="display: none">Campo nome obrigatório!</div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <a class="btn btn-danger" href="${url}">Cancelar</a>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>
                     </form>
                 </div>

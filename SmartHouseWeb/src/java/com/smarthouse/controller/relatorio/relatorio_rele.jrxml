@@ -18,20 +18,20 @@ LEFT JOIN dispositivo ON dis_id = rel_dispositivo_fk]]>
 	<title>
 		<band height="72">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="6d8dc729-1abc-4048-b52f-b00863ea7ea0"/>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="72" backcolor="#006699" uuid="9f4241c7-e026-40f8-a1f4-2abd231e34a4"/>
 				<staticText>
-					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="953b070a-bc25-4a12-827f-c43f733965e7"/>
+					<reportElement x="20" y="20" width="397" height="43" forecolor="#FFFFFF" uuid="266cd614-12a3-47c8-ae4f-7ced7f080f72"/>
 					<textElement>
 						<font size="34" isBold="true"/>
 					</textElement>
-					<text><![CDATA[Relés]]></text>
+					<text><![CDATA[Relatório de Relés]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="7c8ff1f0-8231-49e2-82fe-8e85f77a9050"/>
+					<reportElement x="417" y="43" width="123" height="20" forecolor="#FFFFFF" uuid="a6888224-4704-4b4f-8597-87f018d55d8a"/>
 					<textElement textAlignment="Right">
 						<font size="14" isBold="false"/>
 					</textElement>
-					<text><![CDATA[relatório de relés]]></text>
+					<text><![CDATA[SmartHouse]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -39,18 +39,18 @@ LEFT JOIN dispositivo ON dis_id = rel_dispositivo_fk]]>
 	<pageHeader>
 		<band height="20">
 			<rectangle>
-				<reportElement x="0" y="0" width="555" height="20" backcolor="#E6E6E6" uuid="f7724f6c-0b9d-4e35-9bce-c42fbd998a10"/>
+				<reportElement x="0" y="0" width="555" height="20" backcolor="#E6E6E6" uuid="a5985628-aa9a-47d9-a8a8-daf403b82851"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="353" y="0" width="100" height="20" uuid="71652be8-33d6-4a26-bc14-4d8a47655cc6"/>
+				<reportElement x="353" y="0" width="100" height="20" uuid="05bceaa4-6970-4d9f-a6a4-c6ec8343ed42"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<text><![CDATA[Usuário:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="453" y="0" width="102" height="20" uuid="82add986-29c8-414b-9a58-a9b997056461"/>
+				<reportElement x="453" y="0" width="102" height="20" uuid="86819905-8567-49e6-b4f3-4fb52e5f0619"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{USER}]]></textFieldExpression>
 			</textField>
@@ -76,7 +76,7 @@ LEFT JOIN dispositivo ON dis_id = rel_dispositivo_fk]]>
 			<staticText>
 				<reportElement x="0" y="0" width="69" height="20" forecolor="#FFFFFF" uuid="f3f8b575-ea86-48c3-aa95-63e34d773ca0"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[ID]]></text>
+				<text><![CDATA[-]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="69" y="0" width="193" height="20" forecolor="#FFFFFF" uuid="3b0d5b18-b687-42b7-bebc-6afeb813074f"/>

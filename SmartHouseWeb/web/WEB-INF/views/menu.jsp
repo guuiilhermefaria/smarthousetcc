@@ -1,7 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<aside class="main-sidebar">
+<aside class="main-sidebar" style="position: fixed;">
     <section class="sidebar" style="height: auto;">
         <ul class="sidebar-menu">
             <li class="header">CADASTRO</li>
